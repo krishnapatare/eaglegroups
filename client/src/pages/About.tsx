@@ -1,5 +1,6 @@
 import { SectionHeader } from "@/components/SectionHeader";
 import { motion } from "framer-motion";
+import founderImg from "@assets/Krushna_Image_Profetional_1767800329973.png";
 
 export default function About() {
   return (
@@ -34,6 +35,55 @@ export default function About() {
               className="rounded-2xl shadow-2xl border border-white/10"
             />
           </motion.div>
+        </div>
+
+        {/* Founder Section */}
+        <div className="mb-20">
+          <div className="glass-card p-12 rounded-2xl border border-white/10 overflow-hidden relative">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <div className="relative inline-block">
+                  <img 
+                    src={founderImg} 
+                    alt="Krushna - Founder & Lead Digital Transformation Strategist" 
+                    className="w-full max-w-md rounded-2xl shadow-2xl border-2 border-primary/20 object-cover"
+                  />
+                  <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground px-6 py-2 rounded-lg font-bold shadow-lg">
+                    Founder
+                  </div>
+                </div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-3xl font-bold mb-2">Krushna</h3>
+                <p className="text-primary font-medium text-xl mb-6">Founder & Lead Digital Transformation Strategist</p>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                  Krushna leads the strategic vision at Eagle Groups. With an enterprise-focused mindset, he specializes in building high-performance digital ecosystems that deliver measurable ROI and operational excellence.
+                </p>
+                <div className="flex gap-4">
+                  <div className="text-center p-4 rounded-xl bg-primary/5 border border-primary/10">
+                    <div className="text-2xl font-bold text-primary">10+</div>
+                    <div className="text-sm text-muted-foreground text-nowrap">Years Exp.</div>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-primary/5 border border-primary/10">
+                    <div className="text-2xl font-bold text-primary">50+</div>
+                    <div className="text-sm text-muted-foreground text-nowrap">Projects</div>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-primary/5 border border-primary/10">
+                    <div className="text-2xl font-bold text-primary">3x</div>
+                    <div className="text-sm text-muted-foreground text-nowrap">ROI Focus</div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">

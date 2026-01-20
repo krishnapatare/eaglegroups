@@ -11,12 +11,12 @@ export default function Home() {
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
         {/* Background Overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/40 to-white z-10" />
           {/* dark modern office tech environment */}
           <img 
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80" 
             alt="Modern Office" 
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-20"
           />
         </div>
 
@@ -60,7 +60,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 border-y border-white/5 bg-secondary/20">
+      <section className="py-20 border-y border-border bg-secondary">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -75,10 +75,10 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="text-center p-6 rounded-2xl bg-white/5 border border-white/5"
+                className="text-center p-6 rounded-2xl bg-background border border-border"
               >
                 <stat.icon className="w-8 h-8 text-primary mx-auto mb-4" />
-                <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-4xl font-bold text-foreground mb-2">{stat.value}</div>
                 <div className="text-muted-foreground">{stat.label}</div>
               </motion.div>
             ))}
@@ -140,8 +140,8 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/10" />
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5" />
+        <div className="absolute inset-0 bg-primary/5" />
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
         
         <div className="container relative z-10 px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Scale Your Vision?</h2>
@@ -150,7 +150,7 @@ export default function Home() {
           </p>
           <div className="flex justify-center gap-4">
             <Link href="/contact">
-              <Button size="lg" className="h-16 px-10 text-xl bg-white text-background hover:bg-white/90">
+              <Button size="lg" className="h-16 px-10 text-xl bg-primary text-primary-foreground hover:bg-primary/90">
                 Get Digital Audit (₹99)
               </Button>
             </Link>

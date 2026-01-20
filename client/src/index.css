@@ -5,31 +5,31 @@
 @tailwind utilities;
 
 :root {
-  /* Dark Navy Theme Base */
+  /* Light Professional Theme Base */
   --font-body: 'Manrope', sans-serif;
   --font-display: 'Space Grotesk', sans-serif;
 
   /* HSL Values */
-  --background: 222 47% 4%;      /* Almost Black Navy - cleaner and more premium */
-  --foreground: 210 40% 98%;     /* Off-white */
+  --background: 0 0% 100%;       /* Pure White */
+  --foreground: 222 47% 11%;     /* Deep Navy for readability */
   
   --primary: 217 91% 60%;        /* Electric Blue */
-  --primary-foreground: 222 47% 11%;
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 222 47% 7%;       /* Slightly lighter than background for depth */
-  --secondary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96%;      /* Very Light Gray/Blue */
+  --secondary-foreground: 222 47% 11%;
 
-  --muted: 222 47% 12%;
-  --muted-foreground: 215 20% 65%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
 
-  --accent: 180 100% 50%;        /* Cyan Accent */
-  --accent-foreground: 222 47% 11%;
+  --accent: 217 91% 60%;         /* Keep Electric Blue as accent */
+  --accent-foreground: 0 0% 100%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
 
-  --border: 217 33% 15%;         /* Very subtle borders */
-  --input: 217 33% 15%;
+  --border: 214 32% 91%;         /* Soft borders */
+  --input: 214 32% 91%;
   --ring: 217 91% 60%;
 
   --radius: 0.5rem;
@@ -45,21 +45,21 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    @apply font-bold tracking-tight text-white;
+    @apply font-bold tracking-tight text-foreground; /* Using foreground instead of white */
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-400 to-accent;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-600 to-blue-400;
   }
   
   .glass-card {
-    @apply bg-secondary/30 backdrop-blur-md border border-white/10 shadow-xl;
+    @apply bg-white/70 backdrop-blur-md border border-black/5 shadow-lg;
   }
 
   .glass-header {
-    @apply bg-background/80 backdrop-blur-lg border-b border-white/5;
+    @apply bg-white/80 backdrop-blur-lg border-b border-black/5;
   }
 }
 

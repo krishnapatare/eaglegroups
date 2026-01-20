@@ -3,14 +3,14 @@ import { Rocket, Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-r
 
 export function Footer() {
   return (
-    <footer className="bg-secondary border-t border-white/5 pt-16 pb-8">
+    <footer className="bg-secondary border-t border-border pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
               <Rocket className="w-6 h-6 text-primary" />
-              <span className="font-display font-bold text-xl text-white">EAGLE<span className="text-primary">GROUPS</span></span>
+              <span className="font-display font-bold text-xl text-foreground">EAGLE<span className="text-primary">GROUPS</span></span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Architecting digital ecosystems for ambitious enterprises. We transform complexity into competitive advantage.
@@ -24,7 +24,7 @@ export function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="font-bold text-white mb-6">Company</h4>
+            <h4 className="font-bold text-foreground mb-6">Company</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
               <li><Link href="/services" className="hover:text-primary transition-colors">Services</Link></li>
@@ -35,7 +35,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-bold text-white mb-6">Solutions</h4>
+            <h4 className="font-bold text-foreground mb-6">Solutions</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>Enterprise Web</li>
               <li>Mobile Applications</li>
@@ -46,7 +46,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-bold text-white mb-6">Contact</h4>
+            <h4 className="font-bold text-foreground mb-6">Contact</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-primary mt-1" />
@@ -64,7 +64,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/5 pt-8 text-center text-xs text-muted-foreground">
+        <div className="border-t border-border pt-8 text-center text-xs text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} Eagle Groups. All rights reserved.</p>
         </div>
       </div>

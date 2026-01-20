@@ -10,16 +10,16 @@
   --font-display: 'Space Grotesk', sans-serif;
 
   /* HSL Values */
-  --background: 222 47% 11%;     /* Dark Navy */
+  --background: 222 47% 4%;      /* Almost Black Navy - cleaner and more premium */
   --foreground: 210 40% 98%;     /* Off-white */
   
   --primary: 217 91% 60%;        /* Electric Blue */
   --primary-foreground: 222 47% 11%;
 
-  --secondary: 217 33% 17%;      /* Lighter Navy */
+  --secondary: 222 47% 7%;       /* Slightly lighter than background for depth */
   --secondary-foreground: 210 40% 98%;
 
-  --muted: 217 33% 17%;
+  --muted: 222 47% 12%;
   --muted-foreground: 215 20% 65%;
 
   --accent: 180 100% 50%;        /* Cyan Accent */
@@ -28,8 +28,8 @@
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
 
-  --border: 217 33% 25%;
-  --input: 217 33% 25%;
+  --border: 217 33% 15%;         /* Very subtle borders */
+  --input: 217 33% 15%;
   --ring: 217 91% 60%;
 
   --radius: 0.5rem;

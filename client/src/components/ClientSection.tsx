@@ -51,13 +51,13 @@ export function ClientSection() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
-              <div className="p-8">
-                <div className="text-primary font-medium mb-2">{client.category}</div>
-                <h3 className="text-2xl font-bold mb-4">{client.name}</h3>
-                <p className="text-muted-foreground">{client.description}</p>
-                <div className="mt-4 pt-4 border-t border-white/5 flex justify-between items-center">
-                  <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground">Platform</span>
-                  <span className="text-xs font-semibold px-2 py-1 rounded bg-primary/10 text-primary">
+              <div className="p-8 bg-white">
+                <div className="text-primary font-bold mb-2 uppercase tracking-wider text-sm">{client.category}</div>
+                <h3 className="text-2xl font-bold mb-4 text-slate-900">{client.name}</h3>
+                <p className="text-slate-600 leading-relaxed font-medium">{client.description}</p>
+                <div className="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center">
+                  <span className="text-xs font-mono uppercase tracking-wider text-slate-400">Platform</span>
+                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
                     {client.category === "Mobile App" ? "Application" : "Website"}
                   </span>
                 </div>

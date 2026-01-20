@@ -30,7 +30,7 @@ export function ClientSection() {
     <section className="py-32 bg-white/[0.02]">
       <div className="container mx-auto px-4">
         <SectionHeader 
-          title="Client Showcases" 
+          title="Client " 
           subtitle="A glimpse into the high-performance digital ecosystems we've engineered. Websites and applications tailored for industry leaders."
         />
         

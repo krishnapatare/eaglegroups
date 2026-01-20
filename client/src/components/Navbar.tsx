@@ -30,7 +30,7 @@ export function Navbar() {
           <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">
             <Rocket className="w-6 h-6 text-primary" />
           </div>
-          <span className="font-display font-bold text-xl tracking-tight text-white">EAGLE<span className="text-primary">GROUPS</span></span>
+          <span className="font-display font-bold text-xl tracking-tight text-[#170303]">EAGLE<span className="text-primary">GROUPS</span></span>
         </Link>
 
         {/* Desktop Nav */}
@@ -56,7 +56,6 @@ export function Navbar() {
           {isOpen ? <X /> : <Menu />}
         </button>
       </div>
-
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-secondary border-b border-white/10 animate-in slide-in-from-top-5">

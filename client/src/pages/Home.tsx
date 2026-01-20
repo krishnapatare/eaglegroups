@@ -3,7 +3,6 @@ import { ArrowRight, CheckCircle2, Globe, Cpu, Users } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { SectionHeader } from "@/components/SectionHeader";
-import { ClientSection } from "@/components/ClientSection";
 
 export default function Home() {
   return (
@@ -86,9 +85,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Client Showcase Section */}
-      <ClientSection />
 
       {/* Value Proposition */}
       <section className="py-32">

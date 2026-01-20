@@ -13,7 +13,7 @@ export function SectionHeader({ title, subtitle, align = "center" }: SectionHead
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-3xl md:text-5xl font-bold mb-4"
+        className="text-3xl md:text-5xl font-bold mb-4 text-slate-950"
       >
         {title}
       </motion.h2>

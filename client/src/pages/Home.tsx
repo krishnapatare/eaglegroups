@@ -34,7 +34,7 @@ export default function Home() {
               Transforming Digital Future
             </div>
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight leading-tight">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight leading-tight text-slate-950">
               Strategic IT Solutions <br />
               <span className="text-gradient">for Business Growth</span>
             </h1>

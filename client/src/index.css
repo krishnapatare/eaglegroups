@@ -45,13 +45,13 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    @apply font-bold tracking-tight text-foreground;
+    @apply font-bold tracking-tight text-slate-950;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-600 to-blue-400 font-extrabold;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600 font-extrabold drop-shadow-sm;
   }
   
   .glass-card {

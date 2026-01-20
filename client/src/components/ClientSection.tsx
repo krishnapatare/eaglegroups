@@ -31,10 +31,10 @@ export function ClientSection() {
       <div className="container mx-auto px-4">
         <SectionHeader 
           title="Client Showcases" 
-          subtitle="A glimpse into the high-performance digital ecosystems we've engineered for industry leaders."
+          subtitle="A glimpse into the high-performance digital ecosystems we've engineered. Websites and applications tailored for industry leaders."
         />
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
           {clients.map((client, i) => (
             <motion.div
               key={i}
@@ -55,8 +55,11 @@ export function ClientSection() {
                 <div className="text-primary font-medium mb-2">{client.category}</div>
                 <h3 className="text-2xl font-bold mb-4">{client.name}</h3>
                 <p className="text-muted-foreground">{client.description}</p>
-                <div className="mt-6 flex items-center gap-2 text-primary font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Case Study Coming Soon
+                <div className="mt-4 pt-4 border-t border-white/5 flex justify-between items-center">
+                  <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground">Platform</span>
+                  <span className="text-xs font-semibold px-2 py-1 rounded bg-primary/10 text-primary">
+                    {client.category === "Mobile App" ? "Application" : "Website"}
+                  </span>
                 </div>
               </div>
             </motion.div>

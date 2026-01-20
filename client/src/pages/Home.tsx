@@ -60,7 +60,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 border-y border-border bg-secondary">
+      <section className="py-20 border-y border-primary/20 bg-primary/5">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -75,11 +75,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="text-center p-6 rounded-2xl bg-background border border-border"
+                className="text-center p-6 rounded-2xl bg-white shadow-sm border border-primary/10"
               >
                 <stat.icon className="w-8 h-8 text-primary mx-auto mb-4" />
-                <div className="text-4xl font-bold text-foreground mb-2">{stat.value}</div>
-                <div className="text-muted-foreground">{stat.label}</div>
+                <div className="text-4xl font-bold text-slate-900 mb-2">{stat.value}</div>
+                <div className="text-slate-600 font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </div>

@@ -52,25 +52,25 @@ export function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden p-2 text-white" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden p-2 text-foreground" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X /> : <Menu />}
         </button>
       </div>
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-secondary border-b border-white/10 animate-in slide-in-from-top-5">
+        <div className="md:hidden absolute top-full left-0 w-full bg-background border-b border-border shadow-xl animate-in slide-in-from-top-5">
           <div className="flex flex-col p-4 gap-4">
             {NAV_LINKS.map((link) => (
               <Link key={link.href} href={link.href}>
                 <div 
-                  className={`text-lg font-medium p-2 rounded-md hover:bg-white/5 ${location === link.href ? "text-primary" : "text-white"}`}
+                  className={`text-lg font-medium p-2 rounded-md hover:bg-secondary ${location === link.href ? "text-primary font-bold" : "text-foreground"}`}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
                 </div>
               </Link>
             ))}
-            <Button className="w-full mt-2">Get Digital Audit</Button>
+            <Button className="w-full mt-2 bg-primary text-primary-foreground">Get Digital Audit</Button>
           </div>
         </div>
       )}

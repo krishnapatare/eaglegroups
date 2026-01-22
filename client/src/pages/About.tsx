@@ -39,20 +39,21 @@ export default function About() {
 
         {/* Founder Section */}
         <div className="mb-20">
-          <div className="glass-card p-12 rounded-2xl border border-white/10 overflow-hidden relative">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="glass-card p-6 md:p-12 rounded-2xl border border-border overflow-hidden relative">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
+                className="flex justify-center md:justify-start"
               >
-                <div className="relative inline-block">
+                <div className="relative inline-block w-full max-w-[320px] md:max-w-md">
                   <img 
                     src={founderImg} 
                     alt="Krushna - Founder & Lead Digital Transformation Strategist" 
-                    className="w-full max-w-md rounded-2xl shadow-2xl border-2 border-primary/20 object-cover"
+                    className="w-full aspect-square rounded-2xl shadow-2xl border-2 border-primary/20 object-cover"
                   />
-                  <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground px-6 py-2 rounded-lg font-bold shadow-lg">
+                  <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 bg-primary text-primary-foreground px-4 md:px-6 py-1.5 md:py-2 rounded-lg font-bold shadow-lg text-sm md:text-base">
                     Founder
                   </div>
                 </div>
@@ -61,24 +62,25 @@ export default function About() {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
+                className="text-center md:text-left"
               >
-                <h3 className="text-3xl font-bold mb-2">Krushna</h3>
-                <p className="text-primary font-medium text-xl mb-6">Founder & Lead Digital Transformation Strategist</p>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                <h3 className="text-2xl md:text-3xl font-bold mb-2">Krushna</h3>
+                <p className="text-primary font-medium text-lg md:text-xl mb-6">Founder & Lead Digital Transformation Strategist</p>
+                <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-8">
                   Krushna leads the strategic vision at Eagle Groups. With an enterprise-focused mindset, he specializes in building high-performance digital ecosystems that deliver measurable ROI and operational excellence.
                 </p>
-                <div className="flex gap-4">
-                  <div className="text-center p-4 rounded-xl bg-primary/5 border border-primary/10">
-                    <div className="text-2xl font-bold text-primary">10+</div>
-                    <div className="text-sm text-muted-foreground text-nowrap">Years Exp.</div>
+                <div className="grid grid-cols-3 gap-2 md:gap-4">
+                  <div className="text-center p-3 md:p-4 rounded-xl bg-primary/5 border border-primary/10">
+                    <div className="text-xl md:text-2xl font-bold text-primary">10+</div>
+                    <div className="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider font-semibold">Years Exp.</div>
                   </div>
-                  <div className="text-center p-4 rounded-xl bg-primary/5 border border-primary/10">
-                    <div className="text-2xl font-bold text-primary">50+</div>
-                    <div className="text-sm text-muted-foreground text-nowrap">Projects</div>
+                  <div className="text-center p-3 md:p-4 rounded-xl bg-primary/5 border border-primary/10">
+                    <div className="text-xl md:text-2xl font-bold text-primary">50+</div>
+                    <div className="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider font-semibold">Projects</div>
                   </div>
-                  <div className="text-center p-4 rounded-xl bg-primary/5 border border-primary/10">
-                    <div className="text-2xl font-bold text-primary">3x</div>
-                    <div className="text-sm text-muted-foreground text-nowrap">ROI Focus</div>
+                  <div className="text-center p-3 md:p-4 rounded-xl bg-primary/5 border border-primary/10">
+                    <div className="text-xl md:text-2xl font-bold text-primary">3x</div>
+                    <div className="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider font-semibold">ROI Focus</div>
                   </div>
                 </div>
               </motion.div>

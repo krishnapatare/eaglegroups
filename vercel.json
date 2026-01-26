@@ -1,19 +1,8 @@
 {
   "version": 2,
   "buildCommand": "npm run build:server",
+  "outputDirectory": "dist",
   "env": {
     "NODE_ENV": "production"
-  },
-  "functions": {
-    "dist/index.cjs": {
-      "runtime": "@vercel/node@3",
-      "maxDuration": 60
-    }
-  },
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/dist/index.cjs"
-    }
-  ]
+  }
 }

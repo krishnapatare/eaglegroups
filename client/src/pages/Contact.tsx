@@ -66,7 +66,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h5 className="font-semibold mb-1">Call Us</h5>
-                    <p className="text-muted-foreground text-sm">+91 98765 43210</p>
+                    <p className="text-muted-foreground text-sm">+919356048383</p>
                   </div>
                 </li>
                 <li className="flex gap-4">
@@ -75,7 +75,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h5 className="font-semibold mb-1">Email Us</h5>
-                    <p className="text-muted-foreground text-sm">hello@egalgroup.in</p>
+                    <p className="text-muted-foreground text-sm">egalgroup36@gmail.com</p>
                   </div>
                 </li>
                 <li className="flex gap-4">

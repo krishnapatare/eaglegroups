@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { insertContactSchema, contactSubmissions } from './schema';
+import { insertContactSchema, contactSubmissions, type InsertContact } from './schema';
 
 export const errorSchemas = {
   validation: z.object({
@@ -10,6 +10,8 @@ export const errorSchemas = {
     message: z.string(),
   }),
 };
+
+export type { InsertContact };
 
 export const api = {
   contact: {

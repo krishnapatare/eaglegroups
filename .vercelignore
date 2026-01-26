@@ -1,0 +1,9 @@
+client
+script
+.git
+.gitignore
+migrations
+drizzle.config.ts
+tsconfig.json
+vite.config.ts
+netlify.toml

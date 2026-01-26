@@ -1,0 +1,17 @@
+[build]
+  command = "npm run build:client"
+  publish = "dist/public"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[env.production]
+  NODE_ENV = "production"
+
+[context.production.environment]
+  REACT_APP_API_URL = "https://your-vercel-url.vercel.app"
+
+[context.dev.environment]
+  REACT_APP_API_URL = "http://localhost:5000"

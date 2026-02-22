@@ -159,7 +159,7 @@ export default function Clients() {
             whileHover={{ y: -5 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">10+</div>
+            <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">5+</div>
             <p className="text-muted-foreground">Years of Excellence</p>
           </motion.div>
         </motion.div>

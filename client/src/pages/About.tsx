@@ -71,7 +71,7 @@ export default function About() {
                 </p>
                 <div className="grid grid-cols-3 gap-2 md:gap-4">
                   <div className="text-center p-3 md:p-4 rounded-xl bg-primary/5 border border-primary/10">
-                    <div className="text-xl md:text-2xl font-bold text-primary">10+</div>
+                    <div className="text-xl md:text-2xl font-bold text-primary">5+</div>
                     <div className="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider font-semibold">Years Exp.</div>
                   </div>
                   <div className="text-center p-3 md:p-4 rounded-xl bg-primary/5 border border-primary/10">

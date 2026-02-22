@@ -57,7 +57,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h5 className="font-semibold mb-1">Visit Us</h5>
-                    <p className="text-muted-foreground text-sm">123 Tech Park, Cyber City,<br />Hyderabad, IN 500081</p>
+                    <p className="text-muted-foreground text-sm">123 Tech Park, Cyber City,<br />Innovation Hub, IN 500081</p>
                   </div>
                 </li>
                 <li className="flex gap-4">

@@ -1,70 +1,63 @@
 import { motion } from "framer-motion";
-import { SectionHeader } from "./SectionHeader";
-import hospitalImg from "@assets/stock_images/professional_hospita_2a7cc928.jpg";
-import hotelImg from "@assets/stock_images/luxury_hotel_website_9128f4ba.jpg";
-import restaurantImg from "@assets/stock_images/modern_restaurant_we_d575f18a.jpg";
+import prabhasLogo from "../assets/logos/prabhas.png";
+import laxmiLogo from "../assets/logos/laxmi.png";
+import rajmataLogo from "../assets/logos/rajmata.png";
 
 const clients = [
   {
-    name: "City General Hospital",
-    category: "Healthcare",
-    image: hospitalImg,
-    description: "Enterprise-grade patient portal and internal management system."
+    name: "Prabhas Motors",
+    logo: prabhasLogo,
+    link: "https://prabhasmotorsgarage.netlify.app/",
   },
   {
-    name: "Grand Azure Hotel",
-    category: "Hospitality",
-    image: hotelImg,
-    description: "Premium booking ecosystem with real-time inventory management."
+    name: "Laxmi Palace",
+    logo: laxmiLogo,
+    link: "https://laxmipalace.netlify.app/",
   },
   {
-    name: "The Velvet Bistro",
-    category: "Restaurant",
-    image: restaurantImg,
-    description: "Digital storefront with integrated reservation and POS system."
-  }
+    name: "Rajmata Hotel",
+    logo: rajmataLogo,
+    link: "https://rajmatahotel.netlify.app/",
+  },
 ];
 
 export function ClientSection() {
+  const duplicated = [...clients, ...clients, ...clients]; // triple duplicate for seamless loop
+
   return (
-    <section className="py-32 bg-white/[0.02]">
-      <div className="container mx-auto px-4">
-        <SectionHeader 
-          title="Client" 
-          subtitle="A glimpse into the high-performance digital ecosystems we've engineered. Websites and applications tailored for industry leaders."
-        />
-        
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {clients.map((client, i) => (
-            <motion.div
+    <section className="py-20 bg-white overflow-hidden">
+      <div className="container mx-auto px-4 text-center mb-12">
+        <h2 className="text-4xl font-bold text-slate-900">
+          Some of our valuable clients
+        </h2>
+      </div>
+
+      <div className="relative overflow-hidden w-full">
+        <motion.div
+          className="flex gap-16"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            repeat: Infinity,
+            ease: "linear",
+            duration: 20,
+          }}
+        >
+          {duplicated.map((client, i) => (
+            <a
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.2 }}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-secondary/20"
+              href={client.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 flex items-center justify-center bg-white rounded-xl border border-slate-100 shadow-sm h-24 w-48 hover:shadow-xl transition duration-300"
             >
-              <div className="aspect-[16/10] overflow-hidden">
-                <img 
-                  src={client.image} 
-                  alt={client.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-              <div className="p-8 bg-white">
-                <div className="text-primary font-bold mb-2 uppercase tracking-wider text-sm">{client.category}</div>
-                <h3 className="text-2xl font-bold mb-4 text-slate-900">{client.name}</h3>
-                <p className="text-slate-600 leading-relaxed font-medium">{client.description}</p>
-                <div className="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center">
-                  <span className="text-xs font-mono uppercase tracking-wider text-slate-400">Platform</span>
-                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
-                    {client.category === "Mobile App" ? "Application" : "Website"}
-                  </span>
-                </div>
-              </div>
-            </motion.div>
+              <img
+                src={client.logo}
+                alt={client.name}
+                className="max-h-10 object-contain"
+              />
+            </a>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

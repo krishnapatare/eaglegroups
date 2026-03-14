@@ -141,23 +141,23 @@ function HeroSlideshow() {
             Transforming Digital Future
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight leading-tight text-slate-950">
-            Strategic IT Solutions <br />
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight leading-tight text-slate-950">
+            Strategic IT Solutions{" "}
             <span className="text-gradient">for Business Growth</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto mb-10">
+          <p className="text-base sm:text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto mb-10 px-2">
             Empowering ambitious enterprises through strategic digital transformation, cloud architecture, and next-gen software engineering.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-row flex-wrap gap-3 justify-center items-center">
             <Link href="/contact">
-              <Button size="lg" className="h-14 px-8 text-lg bg-primary hover:bg-primary/90 shadow-xl shadow-primary/20">
+              <Button size="lg" className="h-12 md:h-14 px-6 md:px-8 text-base md:text-lg bg-primary hover:bg-primary/90 shadow-xl shadow-primary/20">
                 Request Consultation <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
             <Link href="/services">
-              <Button size="lg" variant="outline" className="h-14 px-8 text-lg border-primary/30 text-primary hover:bg-primary/5">
+              <Button size="lg" variant="outline" className="h-12 md:h-14 px-6 md:px-8 text-base md:text-lg border-primary/30 text-primary hover:bg-primary/5">
                 Explore Services
               </Button>
             </Link>

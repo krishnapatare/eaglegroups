@@ -1,6 +1,8 @@
 import { SectionHeader } from "@/components/SectionHeader";
 import { motion } from "framer-motion";
 import founderImg from "@assets/Krushna_Image_Profetional_1767800329973.png";
+import teamImg from "@assets/Eagel_Group_Employ_Group_Photo_1773507648272.png";
+import officeImg from "@assets/Eagel_Group_image__1773507648271.png";
 
 export default function About() {
   return (
@@ -28,11 +30,10 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-             {/* modern office skyscraper building */}
-            <img 
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80" 
-              alt="Our Headquarters" 
-              className="rounded-2xl shadow-2xl border border-white/10"
+            <img
+              src={officeImg}
+              alt="Eagle Groups Team at Work"
+              className="rounded-2xl shadow-2xl border border-slate-200 w-full object-cover"
             />
           </motion.div>
         </div>
@@ -115,6 +116,26 @@ export default function About() {
             </motion.div>
           ))}
         </div>
+
+        {/* Team Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-20 relative overflow-hidden rounded-3xl shadow-2xl"
+        >
+          <img
+            src={teamImg}
+            alt="Eagle Groups Full Team"
+            className="w-full h-72 md:h-96 object-cover object-top"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent flex items-end p-8 md:p-12">
+            <div>
+              <h3 className="text-white text-2xl md:text-4xl font-bold mb-2">The Eagle Groups Family</h3>
+              <p className="text-white/80 text-base md:text-lg max-w-xl">25+ passionate professionals united by a mission to transform businesses through technology.</p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </div>
   );

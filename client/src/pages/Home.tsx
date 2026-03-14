@@ -15,7 +15,7 @@ import { Card } from "@/components/ui/card";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { SectionHeader } from "@/components/SectionHeader";
-import { ClientSection } from "@/components/ClientSection";
+
 import { insertContactSchema, type InsertContact } from "@shared/schema";
 import { useSubmitContact } from "@/hooks/use-contact";
 
@@ -332,7 +332,6 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-          <ClientSection />
         </div>
       </section>
 

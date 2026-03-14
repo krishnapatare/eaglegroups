@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { FloatingButtons } from "@/components/FloatingButtons";
 import ScrollToTop from "@/components/ScrollToTop"; // Helper we'll define inline for simplicity
 
 // Pages
@@ -38,6 +39,7 @@ function Router() {
         </Switch>
       </main>
       <Footer />
+      <FloatingButtons />
     </div>
   );
 }

@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Code, Smartphone, Layout, Cloud, Search, ShieldCheck } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ClientSection } from "@/components/ClientSection";
 
 const SERVICES = [
   {
@@ -67,9 +66,6 @@ export default function Services() {
             </motion.div>
           ))}
         </div>
-
-        {/* Client Review / Showcase Section */}
-        <ClientSection />
 
         <div className="mt-20 p-12 rounded-3xl bg-gradient-to-r from-primary/20 to-blue-900/20 border border-primary/20 text-center">
           <h3 className="text-3xl font-bold mb-6">Need a Custom Solution?</h3>

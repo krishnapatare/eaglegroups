@@ -61,8 +61,8 @@ function HeroSlideshow() {
   const next = () => setCurrent((p) => (p + 1) % SLIDES.length);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
-      {/* Sliding background images */}
+    <section className="relative min-h-screen flex flex-col overflow-hidden">
+      {/* Sliding background images — full absolute layer */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
           <motion.img
@@ -76,93 +76,97 @@ function HeroSlideshow() {
             className="absolute inset-0 w-full h-full object-cover"
           />
         </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/60 to-white z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/65 to-white" />
       </div>
 
-      {/* Slide caption badge */}
-      <div className="absolute bottom-28 left-0 right-0 z-20 flex justify-center">
-        <AnimatePresence mode="wait">
+      {/* Main hero content — takes up the flex space */}
+      <div className="relative z-10 flex-1 flex items-center justify-center pt-28 pb-8 px-4">
+        <div className="container text-center">
           <motion.div
-            key={current}
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.5 }}
-            className="text-center px-4"
+            transition={{ duration: 0.8 }}
           >
-            <p className="text-sm md:text-base font-semibold text-primary uppercase tracking-widest">
-              {SLIDES[current].label}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              </span>
+              Transforming Digital Future
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-5 tracking-tight text-slate-950" style={{ lineHeight: "1.15" }}>
+              Strategic IT Solutions{" "}
+              <span className="text-gradient">for Business Growth</span>
+            </h1>
+
+            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-8">
+              Empowering ambitious enterprises through strategic digital transformation, cloud architecture, and next-gen software engineering.
             </p>
-            <p className="text-xs md:text-sm text-slate-500 mt-1">{SLIDES[current].sub}</p>
+
+            <div className="flex flex-row flex-wrap gap-3 justify-center items-center">
+              <Link href="/contact">
+                <Button size="lg" className="h-12 px-7 text-base bg-primary hover:bg-primary/90 shadow-xl shadow-primary/20">
+                  Request Consultation <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link href="/services">
+                <Button size="lg" variant="outline" className="h-12 px-7 text-base border-primary/30 text-primary hover:bg-primary/5">
+                  Explore Services
+                </Button>
+              </Link>
+            </div>
           </motion.div>
-        </AnimatePresence>
+        </div>
       </div>
 
-      {/* Arrow controls */}
-      <button
-        onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/80 hover:bg-white shadow-md flex items-center justify-center transition-all"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft className="w-5 h-5 text-slate-700" />
-      </button>
-      <button
-        onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/80 hover:bg-white shadow-md flex items-center justify-center transition-all"
-        aria-label="Next slide"
-      >
-        <ChevronRight className="w-5 h-5 text-slate-700" />
-      </button>
-
-      {/* Dot indicators */}
-      <div className="absolute bottom-14 left-0 right-0 z-20 flex justify-center gap-2">
-        {SLIDES.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`transition-all rounded-full ${i === current ? "w-6 h-2 bg-primary" : "w-2 h-2 bg-primary/30"}`}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
-      </div>
-
-      {/* Hero content */}
-      <div className="container relative z-10 px-4 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+      {/* Bottom bar: arrows + slide caption + dots — kept in its own row */}
+      <div className="relative z-10 flex items-center justify-between px-4 py-4 gap-2">
+        {/* Prev arrow */}
+        <button
+          onClick={prev}
+          className="w-9 h-9 shrink-0 rounded-full bg-white/80 hover:bg-white shadow-md flex items-center justify-center transition-all"
+          aria-label="Previous slide"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            Transforming Digital Future
+          <ChevronLeft className="w-4 h-4 text-slate-700" />
+        </button>
+
+        {/* Caption + dots */}
+        <div className="flex flex-col items-center gap-2 flex-1 min-w-0">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current}
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.4 }}
+              className="text-center px-2"
+            >
+              <p className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest truncate">
+                {SLIDES[current].label}
+              </p>
+            </motion.div>
+          </AnimatePresence>
+          <div className="flex gap-2">
+            {SLIDES.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`transition-all rounded-full ${i === current ? "w-5 h-2 bg-primary" : "w-2 h-2 bg-primary/30"}`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
           </div>
+        </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight leading-tight text-slate-950">
-            Strategic IT Solutions{" "}
-            <span className="text-gradient">for Business Growth</span>
-          </h1>
-
-          <p className="text-base sm:text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto mb-10 px-2">
-            Empowering ambitious enterprises through strategic digital transformation, cloud architecture, and next-gen software engineering.
-          </p>
-
-          <div className="flex flex-row flex-wrap gap-3 justify-center items-center">
-            <Link href="/contact">
-              <Button size="lg" className="h-12 md:h-14 px-6 md:px-8 text-base md:text-lg bg-primary hover:bg-primary/90 shadow-xl shadow-primary/20">
-                Request Consultation <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <Link href="/services">
-              <Button size="lg" variant="outline" className="h-12 md:h-14 px-6 md:px-8 text-base md:text-lg border-primary/30 text-primary hover:bg-primary/5">
-                Explore Services
-              </Button>
-            </Link>
-          </div>
-        </motion.div>
+        {/* Next arrow */}
+        <button
+          onClick={next}
+          className="w-9 h-9 shrink-0 rounded-full bg-white/80 hover:bg-white shadow-md flex items-center justify-center transition-all"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="w-4 h-4 text-slate-700" />
+        </button>
       </div>
     </section>
   );

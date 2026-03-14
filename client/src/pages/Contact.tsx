@@ -131,7 +131,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Full Name</FormLabel>
                           <FormControl>
-                            <Input placeholder="John Doe" {...field} className="bg-secondary/50 border-white/10" />
+                            <Input placeholder="John Doe" {...field} className="bg-white border-border" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -144,7 +144,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Email Address</FormLabel>
                           <FormControl>
-                            <Input placeholder="john@company.com" {...field} className="bg-secondary/50 border-white/10" />
+                            <Input placeholder="john@company.com" {...field} className="bg-white border-border" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -160,7 +160,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Phone (Optional)</FormLabel>
                           <FormControl>
-                            <Input placeholder="+91..." {...field} value={field.value || ""} className="bg-secondary/50 border-white/10" />
+                            <Input placeholder="+91..." {...field} value={field.value || ""} className="bg-white border-border" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -173,7 +173,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Company (Optional)</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your Company Ltd" {...field} value={field.value || ""} className="bg-secondary/50 border-white/10" />
+                            <Input placeholder="Your Company Ltd" {...field} value={field.value || ""} className="bg-white border-border" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -189,7 +189,7 @@ export default function Contact() {
                         <FormLabel>Interested In</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value || "consulting"}>
                           <FormControl>
-                            <SelectTrigger className="bg-secondary/50 border-white/10">
+                            <SelectTrigger className="bg-white border-border">
                               <SelectValue placeholder="Select a service" />
                             </SelectTrigger>
                           </FormControl>
@@ -214,7 +214,7 @@ export default function Contact() {
                         <FormControl>
                           <Textarea 
                             placeholder="Tell us about your project requirements..." 
-                            className="min-h-[150px] bg-secondary/50 border-white/10" 
+                            className="min-h-[150px] bg-white border-border" 
                             {...field} 
                           />
                         </FormControl>

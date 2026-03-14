@@ -28,6 +28,14 @@
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
 
+  --popover: 0 0% 100%;               /* White background for dropdowns */
+  --popover-foreground: 222 47% 11%;  /* Deep navy text in dropdowns */
+  --popover-border: 214 32% 91%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --card-border: 214 32% 91%;
+
   --border: 214 32% 91%;         /* Soft borders */
   --input: 214 32% 91%;
   --ring: 217 91% 60%;

@@ -1,16 +1,15 @@
 import { motion } from "framer-motion";
+import laxmiLogo from "@assets/laxmi_1773735415776.png";
+import prabhasLogo from "@assets/prabhas_1773735415777.png";
+import rajmataLogo from "@assets/rajmata_1773735415777.png";
 
 const clients = [
-  { name: "Prabhas Motors", category: "Automotive", link: "https://prabhasmotorsgarage.netlify.app/" },
-  { name: "Laxmi Palace", category: "Hospitality", link: "https://laxmipalace.netlify.app/" },
-  { name: "Rajmata Hotel", category: "Hospitality", link: "https://rajmatahotel.netlify.app/" },
-  { name: "Prabhas Motors", category: "Automotive", link: "https://prabhasmotorsgarage.netlify.app/" },
-  { name: "Laxmi Palace", category: "Hospitality", link: "https://laxmipalace.netlify.app/" },
-  { name: "Rajmata Hotel", category: "Hospitality", link: "https://rajmatahotel.netlify.app/" },
-  { name: "Prabhas Motors", category: "Automotive", link: "https://prabhasmotorsgarage.netlify.app/" },
-  { name: "Laxmi Palace", category: "Hospitality", link: "https://laxmipalace.netlify.app/" },
-  { name: "Rajmata Hotel", category: "Hospitality", link: "https://rajmatahotel.netlify.app/" },
+  { name: "Laxmi Palace", logo: laxmiLogo, link: "https://laxmipalace.netlify.app/" },
+  { name: "Prabhas Motors", logo: prabhasLogo, link: "https://prabhasmotorsgarage.netlify.app/" },
+  { name: "Rajmata Family Restaurant", logo: rajmataLogo, link: "https://rajmatahotel.netlify.app/" },
 ];
+
+const duplicated = [...clients, ...clients, ...clients];
 
 export function ClientSection() {
   return (
@@ -22,23 +21,23 @@ export function ClientSection() {
 
       <div className="relative w-full overflow-hidden">
         <motion.div
-          className="flex gap-8"
+          className="flex gap-10"
           animate={{ x: ["0%", "-33.33%"] }}
-          transition={{ repeat: Infinity, ease: "linear", duration: 18 }}
+          transition={{ repeat: Infinity, ease: "linear", duration: 20 }}
         >
-          {clients.map((client, i) => (
+          {duplicated.map((client, i) => (
             <a
               key={i}
               href={client.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-shrink-0 flex flex-col items-center justify-center bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-primary/40 transition-all duration-300 h-28 w-52 px-6 group"
+              className="flex-shrink-0 flex items-center justify-center bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 h-24 w-52 px-6"
             >
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-2 group-hover:bg-primary/20 transition-colors">
-                <span className="text-primary font-bold text-lg">{client.name.charAt(0)}</span>
-              </div>
-              <span className="font-bold text-slate-800 text-sm text-center leading-tight">{client.name}</span>
-              <span className="text-xs text-primary font-medium mt-1 uppercase tracking-wider">{client.category}</span>
+              <img
+                src={client.logo}
+                alt={client.name}
+                className="max-h-12 max-w-full object-contain"
+              />
             </a>
           ))}
         </motion.div>

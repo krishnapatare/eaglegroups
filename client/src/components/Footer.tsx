@@ -1,5 +1,6 @@
 import { Link } from "wouter";
-import { Rocket, Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react";
+import { Rocket, Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
+import { SiInstagram } from "react-icons/si";
 
 export function Footer() {
   return (
@@ -16,9 +17,9 @@ export function Footer() {
               Architecting digital ecosystems for ambitious enterprises. We transform complexity into competitive advantage.
             </p>
             <div className="flex gap-4 pt-2">
-              <a href="#" className="text-slate-400 hover:text-primary transition-colors"><Linkedin size={20} /></a>
-              <a href="#" className="text-slate-400 hover:text-primary transition-colors"><Twitter size={20} /></a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Github size={20} /></a>
+              <a href="https://linkedin.com/company/eageltech" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary transition-colors"><Linkedin size={20} /></a>
+              <a href="https://www.instagram.com/eagletech_innovate?igsh=ZnJ0bnJxanRnNWFs" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary transition-colors"><SiInstagram size={20} /></a>
+              <a href="https://github.com/krishnapatare" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary transition-colors"><Github size={20} /></a>
             </div>
           </div>
 

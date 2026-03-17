@@ -21,9 +21,9 @@ export function ClientSection() {
 
       <div className="relative w-full overflow-hidden">
         <motion.div
-          className="flex gap-10"
+          className="flex gap-5 md:gap-10"
           animate={{ x: ["0%", "-33.33%"] }}
-          transition={{ repeat: Infinity, ease: "linear", duration: 20 }}
+          transition={{ repeat: Infinity, ease: "linear", duration: 10 }}
         >
           {duplicated.map((client, i) => (
             <a
@@ -31,12 +31,12 @@ export function ClientSection() {
               href={client.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-shrink-0 flex items-center justify-center bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 h-24 w-52 px-6"
+              className="flex-shrink-0 flex items-center justify-center bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 h-20 w-36 md:h-24 md:w-52 px-4 md:px-6"
             >
               <img
                 src={client.logo}
                 alt={client.name}
-                className="max-h-12 max-w-full object-contain"
+                className="max-h-10 md:max-h-12 max-w-full object-contain"
               />
             </a>
           ))}

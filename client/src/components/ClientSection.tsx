@@ -50,10 +50,13 @@ function RotatingWord() {
 export function ClientSection() {
   const setRef = useRef<HTMLDivElement>(null);
   const [offset, setOffset] = useState(0);
+  const [duration, setDuration] = useState(0);
 
   useEffect(() => {
     if (setRef.current) {
-      setOffset(setRef.current.offsetWidth);
+      const w = setRef.current.offsetWidth;
+      setOffset(w);
+      setDuration(w / 150);
     }
   }, []);
 
@@ -73,17 +76,17 @@ export function ClientSection() {
               0%   { transform: translateX(0px); }
               100% { transform: translateX(-${offset}px); }
             }
-            .marquee-px { animation: marquee-px 7s linear infinite; }
+            .marquee-px { animation: marquee-px ${duration.toFixed(2)}s linear infinite; }
           `}</style>
         )}
         <div className={`flex ${offset > 0 ? "marquee-px" : ""}`} style={{ width: "max-content" }}>
           <div ref={setRef} className="flex gap-5 md:gap-10 pr-5 md:pr-10">
-            {clients.map((client, i) => (
+            {[...clients, ...clients, ...clients, ...clients, ...clients, ...clients].map((client, i) => (
               <ClientCard key={`a-${i}`} client={client} />
             ))}
           </div>
           <div className="flex gap-5 md:gap-10 pr-5 md:pr-10">
-            {clients.map((client, i) => (
+            {[...clients, ...clients, ...clients, ...clients, ...clients, ...clients].map((client, i) => (
               <ClientCard key={`b-${i}`} client={client} />
             ))}
           </div>

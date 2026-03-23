@@ -1,0 +1,50 @@
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K5:34:58 PM [express] serving on port 5000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m5:37:21 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Services.tsx, /src/index.css[22m
+
+
+
+
+
+[1;1H[0J[2m5:37:25 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Services.tsx, /src/index.css[22m [33m(x2)[39m
+5:40:23 PM [express] POST /api/contact 201 in 967ms :: {"id":2,"name":"Krushna Patare","email":"krushnapatare88@gmail.com","phone":"+919579456004","company":"Eagletec ","message":"Hello ","serviceInterest":"mobile","createdAt":"2026-03-14T17:40:23.169Z"}

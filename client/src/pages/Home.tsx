@@ -1,15 +1,91 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ArrowRight, CheckCircle2, Globe, Cpu, Users, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { SectionHeader } from "@/components/SectionHeader";
+
+import laxmiLogo from "@assets/laxmi_1773735415776.png";
+import prabhasLogo from "@assets/prabhas_1773735415777.png";
+import rajmataLogo from "@assets/rajmata_1773735415777.png";
 
 import teamMeetingImg from "@assets/Eagel_Group_image__1773507648271.png";
 import serverRoomImg from "@assets/Eagle_Group_Image_1773507648271.png";
 import presentationImg from "@assets/Eagel_Group_Employ_Image_2_1773507648272.png";
 import digitalLandscapeImg from "@assets/Eagle_Group_Employ_Image__1773507648272.png";
 import groupPhotoImg from "@assets/Eagel_Group_Employ_Group_Photo_1773507648272.png";
+
+const CLIENT_LOGOS = [
+  { name: "Laxmi Palace", logo: laxmiLogo },
+  { name: "Prabhas Motors", logo: prabhasLogo },
+  { name: "Rajmata Family Restaurant", logo: rajmataLogo },
+];
+const bigList = Array(6).fill(CLIENT_LOGOS).flat() as typeof CLIENT_LOGOS;
+
+function HomeLogoMarquee() {
+  const rowRef = useRef<HTMLDivElement>(null);
+  const [offset, setOffset] = useState(0);
+  const [fwdDur, setFwdDur] = useState(0);
+  const [revDur, setRevDur] = useState(0);
+
+  useEffect(() => {
+    if (rowRef.current) {
+      const w = rowRef.current.offsetWidth;
+      setOffset(w);
+      setFwdDur(w / 120);
+      setRevDur(w / 90);
+    }
+  }, []);
+
+  return (
+    <section className="py-8 bg-white border-b border-slate-100 overflow-hidden">
+      <p className="text-center text-xs text-slate-400 font-semibold uppercase tracking-widest mb-6">
+        Trusted by our clients
+      </p>
+
+      {offset > 0 && (
+        <style>{`
+          @keyframes hlm-fwd { 0% { transform: translateX(0px); } 100% { transform: translateX(-${offset}px); } }
+          @keyframes hlm-rev { 0% { transform: translateX(-${offset}px); } 100% { transform: translateX(0px); } }
+          .hlm-fwd { animation: hlm-fwd ${fwdDur.toFixed(2)}s linear infinite; }
+          .hlm-rev { animation: hlm-rev ${revDur.toFixed(2)}s linear infinite; }
+        `}</style>
+      )}
+
+      {/* Row 1 — scrolls left */}
+      <div className="overflow-hidden mb-5">
+        <div className={`flex gap-12 ${offset > 0 ? "hlm-fwd" : ""}`} style={{ width: "max-content" }}>
+          <div ref={rowRef} className="flex gap-12 pr-12">
+            {bigList.map((c, i) => (
+              <img key={`r1a-${i}`} src={c.logo} alt={c.name} className="h-7 md:h-8 w-auto object-contain grayscale opacity-40" />
+            ))}
+          </div>
+          <div className="flex gap-12 pr-12">
+            {bigList.map((c, i) => (
+              <img key={`r1b-${i}`} src={c.logo} alt={c.name} className="h-7 md:h-8 w-auto object-contain grayscale opacity-40" />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Row 2 — scrolls right */}
+      <div className="overflow-hidden">
+        <div className={`flex gap-12 ${offset > 0 ? "hlm-rev" : ""}`} style={{ width: "max-content" }}>
+          <div className="flex gap-12 pr-12">
+            {bigList.map((c, i) => (
+              <img key={`r2a-${i}`} src={c.logo} alt={c.name} className="h-7 md:h-8 w-auto object-contain grayscale opacity-25" />
+            ))}
+          </div>
+          <div className="flex gap-12 pr-12">
+            {bigList.map((c, i) => (
+              <img key={`r2b-${i}`} src={c.logo} alt={c.name} className="h-7 md:h-8 w-auto object-contain grayscale opacity-25" />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 const SLIDES = [
   { img: digitalLandscapeImg, label: "Eagle Groups — Shaping the Digital Future" },
@@ -123,6 +199,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <HeroSlideshow />
+      <HomeLogoMarquee />
 
       {/* Stats Section */}
       <section className="py-20 border-y border-primary/20 bg-primary/5">

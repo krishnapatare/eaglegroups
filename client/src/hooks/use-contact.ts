@@ -1,4 +1,4 @@
-import { useMutation } from "@tanstack/react-query";
+import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 export interface ContactFormData {
@@ -12,9 +12,11 @@ export interface ContactFormData {
 
 export function useSubmitContact() {
   const { toast } = useToast();
+  const [isPending, setIsPending] = useState(false);
 
-  return useMutation({
-    mutationFn: async (data: ContactFormData) => {
+  const mutate = async (data: ContactFormData, callbacks?: { onSuccess?: () => void }) => {
+    setIsPending(true);
+    try {
       // Prepare form data for Netlify Forms
       const formData = new FormData();
       formData.append("form-name", "contact");
@@ -34,21 +36,26 @@ export function useSubmitContact() {
         throw new Error("Failed to submit contact form");
       }
       
-      return { success: true };
-    },
-    onSuccess: () => {
       toast({
         title: "Message Sent Successfully",
         description: "We'll get back to you within 24 hours.",
         variant: "default",
       });
-    },
-    onError: (error) => {
+
+      callbacks?.onSuccess?.();
+    } catch (error) {
       toast({
         title: "Error Sending Message",
         description: error instanceof Error ? error.message : "Please try again later",
         variant: "destructive",
       });
-    },
-  });
+    } finally {
+      setIsPending(false);
+    }
+  };
+
+  return {
+    mutate,
+    isPending,
+  };
 }

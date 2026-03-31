@@ -3,11 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import laxmiLogo from "@assets/laxmi_1773735415776.png";
 import prabhasLogo from "@assets/prabhas_1773735415777.png";
 import rajmataLogo from "@assets/rajmata_1773735415777.png";
+import vkUnisexLogo from "@assets/vk_unisex_salon.svg";
 
 const clients = [
   { name: "Laxmi Palace", logo: laxmiLogo, link: "https://laxmipalace.netlify.app/" },
   { name: "Prabhas Motors", logo: prabhasLogo, link: "https://prabhasmotorsgarage.netlify.app/" },
   { name: "Rajmata Family Restaurant", logo: rajmataLogo, link: "https://rajmatahotel.netlify.app/" },
+  { name: "VK Unisex Salon", logo: vkUnisexLogo, link: "https://vk-unisex-salon.netlify.app/" },
 ];
 
 const ROTATING_WORDS = [

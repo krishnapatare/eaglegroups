@@ -8,7 +8,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import laxmiLogo from "@assets/laxmi_1773735415776.png";
 import prabhasLogo from "@assets/prabhas_1773735415777.png";
 import rajmataLogo from "@assets/rajmata_1773735415777.png";
-import vkUnisexLogo from "@assets/vk_unisex_salon_1767797574859.png";
+import vkUnisexLogo from "@assets/vk_unisex_salon.svg";
 
 import teamMeetingImg from "@assets/Eagel_Group_image__1773507648271.png";
 import serverRoomImg from "@assets/Eagle_Group_Image_1773507648271.png";
